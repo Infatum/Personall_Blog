@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from blog.views import index, view_category, views_post
+from django.contrib.flatpages import views
+from blog.views import view_category, views_post
 
 urlpatterns = [
-    url(r'^$', index, name="view_blog_index"),
+    url(r'^$', views.flatpage, {'url': '/about/'}, name='about'),
     url(r'^admin/', admin.site.urls),
     url(r'^blog/views/(?P<slug>[^\.]+).html',
         views_post, name='view_blog_post'),
