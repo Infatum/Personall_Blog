@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'blog',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'django_comments',
 ]
 
 SITE_ID = 1

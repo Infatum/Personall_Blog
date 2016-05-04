@@ -1,10 +1,28 @@
 {% extends "base.html" %}
+{% load comments5b                                      %}
+
+
 {% block head_title %}
 	{{ post.title }}
 {% endblock head_title %}
+
 {% block title %}
 	{{ post.title }}
 {% endblock title %}
+
 {% block content %}
-	{{ post.body }}
+
+    {% get_comment_count for post as comment_count %}
+    <div>COMMENCTS_COUNT: {{ comment_count }}</div>
+
+    <article>
+        POST.BODY:
+        {{ post.body }}
+    </article>
+
+    <div>
+        {% render_comment_list for post %}
+    </div>
+
+    {% render_comment_form for post %}
 {% endblock content %}

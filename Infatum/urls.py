@@ -25,6 +25,7 @@ urlpatterns = [
         views_post, name='view_blog_post'),
     url(r'^blog/category/(?P<slug>[^\.]+).html',
         view_category, name='view_blog_category'),
+    url(r'^comments/', include('django_comments.urls')),
 ]
 
 urlpatterns += [

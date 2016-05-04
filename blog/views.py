@@ -9,7 +9,7 @@ def index(request):
 
 
 def views_post(request, slug):
-    return render_to_response('views_post.html', {
+    return render(request, 'view_post.html', {
         'post': get_object_or_404(Blog, slug=slug)
     })
 
@@ -17,6 +17,6 @@ def views_post(request, slug):
 def view_category(request, slug):
     category = get_object_or_404(Category, slug=slug)
     return render(request, 'view_category.html', {
-        'post': Blog.objects.filter(category=category)[:5]
+        'posts': Blog.objects.filter(category=category)[:5]
     })
 # Create your views here.
