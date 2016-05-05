@@ -10,9 +10,6 @@
     <!-- Bootstrap require jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
@@ -20,7 +17,21 @@
     body {
         padding-top: 70px;
     }
-    </style>
+    .nav-mycolors {
+    	background-image: linear-gradient(to left, #442a42, #631639);
+    	color: #ffefd2 !important;
+    }
+    .nav-mycolors a {
+    	color: #ffefd2 !important;
+    }
+	.nav-mycolors .dropdown-menu {
+		background: #333;
+	}
+	.nav-mycolors .dropdown-menu>li>a:focus,
+	.nav-mycolors .dropdown-menu>li>a:hover {
+		background: #000;
+	}
+</style>
 </head>
 <body>
     {% include "navigation.html" %}
