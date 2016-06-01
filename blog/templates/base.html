@@ -16,6 +16,33 @@
     <style>
     body {
         padding-top: 70px;
+        background-image: url('/static/wallhaven-161989.jpg');
+        background-size: auto;
+        font-family: "Roboto"
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.9em;
+    }
+    .site-content {
+        margin-top: 2em;
+        padding-bottom: 1em;
+        background: #FFF;
+        border-radius: 4px;
+        text-align: justify;
+    }
+    .site-sidebar {
+        margin-top: 2em;
+    }
+    .site-sidebar-block {
+        padding-bottom: 1em;
+        margin-bottom: 2em;
+        background: #FFF;
+        border-radius: 4px;
+    }
+    .site-avatar {
+        margin-top: -50px;
+        padding: 6px;
+        background: #FFF;
     }
     .nav-mycolors {
     	background-image: linear-gradient(to left, #442a42, #631639);
@@ -35,13 +62,36 @@
 </head>
 <body>
     {% include "navigation.html" %}
+    <h1>{% block title %}Welcome to my blog{% endblock title %}</h1>
 
+       <div class="container">
+       <div class="row">
+           <div class="col-xs-8 site-content">
+            {% block content %}
+            {% endblock content %}
+           </div>
+           <div class="col-xs-4 site-sidebar">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="text-center site-sidebar-block">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Background&w=360&h=150" alt="">
+                        <img class="img-circle site-avatar" width="120px" src="avatar.jpg" alt="">
+                        <p class="text-center" style="padding: 0 1em">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, quos?</p>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="text-center site-sidebar-block">
+                        <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Background&w=360&h=150" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores tenetur reiciendis quia, sapiente unde nam. Quasi obcaecati earum laborum numquam at repellat tenetur, magnam animi eos quae odit porro cum esse iusto adipisci.</p>
+                    </div>
+                </div>
+            </div>
+       </div>
 
-    <div class="container">
-        <h1>{% block title %}Welcome to my blog{% endblock title %}</h1>
+    {% load staticfiles %}
+    <img src="/static/wallhaven-161989.jpg" alt="Background_image"/>
 
-        {% block content %}
-        {% endblock content %}
+ 
     </div>
 </body>
 </html>

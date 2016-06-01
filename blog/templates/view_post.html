@@ -12,17 +12,21 @@
 
 {% block content %}
 
-    {% get_comment_count for post as comment_count %}
-    <div>COMMENCTS_COUNT: {{ comment_count }}</div>
+    <h2 class="text-center">{{ post.title }}</h2>
+    <hr>
+    <p>{{ post.body }}</p>
 
-    <article>
-        POST.BODY:
-        {{ post.body }}
-    </article>
+    <div class="comments">
+        {% get_comment_count for post as comment_count %}
+        <div>COMMENCTS_COUNT: {{ comment_count }}</div>
 
-    <div>
-        {% render_comment_list for post %}
+        <div>
+            {% render_comment_list for post %}
+        </div>
+
     </div>
+
+
 
     {% render_comment_form for post %}
 {% endblock content %}

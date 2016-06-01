@@ -29,5 +29,5 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    url(r'^', include('django.contrib.flatpages.urls')),
+    # url(r'^', include('django.contrib.flatpages.urls')),
 ]

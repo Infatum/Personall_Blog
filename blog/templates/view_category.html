@@ -9,13 +9,16 @@
 {% block content %}
 	{% if posts %}
 		<div>
-
 			{% for post in posts %}
-				<div><a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-				</div>
+				<div>
+				<h1> {{ post.title }}</h1>
 				<p>
 					{{ post.body }}
 				</p>
+			    <a class="btn btn-default btn-block" href="{{ post.get_absolute_url }}">Continue reading...</a>
+				</div>
+				<hr>
+				<br>
 			{% endfor %}
 		</div>
 	{% else %}
